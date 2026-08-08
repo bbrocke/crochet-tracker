@@ -1,22 +1,36 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  /* warm & crafty palette */
+  --cream: #fdf6ec;
+  --cream-alt: #f7ece0;
+  --terracotta: #c96f4a;
+  --terracotta-dark: #a8552f;
+  --terracotta-bg: rgba(201, 111, 74, 0.12);
+  --sage: #6c8a68;
+  --sage-dark: #55704f;
+  --sage-bg: rgba(139, 168, 136, 0.18);
+  --sand: #e8d9c3;
+  --text: #4a3f38;
+  --text-muted: #8a7a6d;
+  --text-h: #2e241d;
+  --bg: var(--cream);
+  --card-bg: #ffffff;
+  --border: #e3d3bd;
+  --danger: #c14545;
+  --danger-bg: rgba(193, 69, 69, 0.1);
   --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    rgba(120, 80, 40, 0.12) 0 4px 12px -2px, rgba(120, 80, 40, 0.06) 0 2px 4px -1px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans:
+    -apple-system, BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto,
+    sans-serif;
+  --heading: var(--sans);
   --mono: ui-monospace, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
+  --radius: 16px;
+  --radius-sm: 10px;
+
+  font: 17px/145% var(--sans);
+  letter-spacing: 0.1px;
   color-scheme: light dark;
   color: var(--text);
   background: var(--bg);
@@ -32,22 +46,30 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
+    --cream: #221b15;
+    --cream-alt: #2a2119;
+    --terracotta: #e08a63;
+    --terracotta-dark: #eda684;
+    --terracotta-bg: rgba(224, 138, 99, 0.18);
+    --sage: #9dc09a;
+    --sage-dark: #b6d4b3;
+    --sage-bg: rgba(157, 192, 154, 0.18);
+    --sand: #4a3d30;
+    --text: #ecdfd2;
+    --text-muted: #b3a08e;
+    --text-h: #fbf3ea;
+    --bg: var(--cream);
+    --card-bg: #2c241d;
+    --border: #4a3d30;
+    --danger: #e08080;
+    --danger-bg: rgba(224, 128, 128, 0.15);
     --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+      rgba(0, 0, 0, 0.4) 0 4px 12px -2px, rgba(0, 0, 0, 0.25) 0 2px 4px -1px;
   }
+}
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -55,57 +77,142 @@ body {
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--heading);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-h);
+  margin: 0;
 }
 
 h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+  font-size: 32px;
+  letter-spacing: -0.5px;
+  @media (max-width: 600px) {
+    font-size: 26px;
   }
 }
 h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
+  font-size: 22px;
+  line-height: 128%;
+  letter-spacing: -0.2px;
+}
+h3 {
+  font-size: 17px;
 }
 p {
   margin: 0;
 }
 
-code,
-.counter {
+button {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+code {
   font-family: var(--mono);
   display: inline-flex;
   border-radius: 4px;
   color: var(--text-h);
-}
-
-code {
   font-size: 15px;
   line-height: 135%;
   padding: 4px 8px;
-  background: var(--code-bg);
+  background: var(--cream-alt);
+}
+
+/* shared button + form utilities */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s, box-shadow 0.15s;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  filter: brightness(0.96);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--terracotta);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--cream-alt);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.field input,
+.field textarea,
+.field select {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  background: var(--card-bg);
+  color: var(--text);
+  width: 100%;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible,
+.field select:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 1px;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 90px;
+  font-family: inherit;
 }

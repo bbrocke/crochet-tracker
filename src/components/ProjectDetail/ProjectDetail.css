@@ -1,0 +1,147 @@
+.project-detail {
+  padding: 24px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.project-detail-back {
+  align-self: flex-start;
+  padding-left: 4px;
+}
+
+.project-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.project-detail-pattern {
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.project-detail-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.project-detail-edit-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  max-width: 640px;
+}
+
+.project-detail-edit-panel h2 {
+  margin-bottom: 16px;
+}
+
+.project-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+.project-detail-layout .row-counter {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: 24px;
+}
+
+.project-detail-info {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project-detail-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 24px;
+}
+
+.project-detail-section h2 {
+  margin-bottom: 14px;
+}
+
+.project-detail-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.project-detail-section-header h2 {
+  margin-bottom: 0;
+}
+
+.project-detail-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 0;
+}
+
+.project-detail-fields dt {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.project-detail-fields dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+}
+
+.project-detail-notes {
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+  .project-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail-layout .row-counter {
+    grid-column: 1;
+    grid-row: 1;
+    position: static;
+  }
+
+  .project-detail-info {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-detail {
+    padding: 16px 16px 40px;
+  }
+
+  .project-detail-section {
+    padding: 16px;
+  }
+
+  .project-detail-actions {
+    width: 100%;
+  }
+
+  .project-detail-actions .btn {
+    flex: 1;
+  }
+}

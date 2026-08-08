@@ -1,0 +1,65 @@
+.project-card {
+  text-align: left;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+@media (hover: hover) {
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: rgba(120, 80, 40, 0.18) 0 8px 20px -4px, rgba(120, 80, 40, 0.1) 0 4px 8px -2px;
+  }
+}
+
+.project-card:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.project-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.project-card-name {
+  font-size: 18px;
+}
+
+.project-card-pattern {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.project-card-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.project-card-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--sand);
+  overflow: hidden;
+}
+
+.project-card-bar-fill {
+  height: 100%;
+  background: var(--terracotta);
+  border-radius: 999px;
+}
