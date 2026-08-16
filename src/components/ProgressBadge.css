@@ -1,0 +1,24 @@
+.progress-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.progress-badge--not-started {
+  background: var(--sand);
+  color: var(--text-muted);
+}
+
+.progress-badge--in-progress {
+  background: var(--terracotta-bg);
+  color: var(--terracotta-dark);
+}
+
+.progress-badge--finished {
+  background: var(--sage-bg);
+  color: var(--sage-dark);
+}

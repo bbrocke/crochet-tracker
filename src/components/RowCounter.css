@@ -1,0 +1,86 @@
+.row-counter {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.row-counter-label {
+  color: var(--text-muted);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.row-counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.row-counter-value {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-h);
+  min-width: 2ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.row-counter-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cream-alt);
+  color: var(--text-h);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: filter 0.15s;
+}
+
+.row-counter-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.row-counter-btn:hover:not(:disabled) {
+  filter: brightness(0.95);
+}
+
+.row-counter-btn--primary {
+  background: var(--terracotta);
+  color: #fff;
+}
+
+.row-counter-reset {
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .row-counter {
+    padding: 20px 16px;
+  }
+
+  .row-counter-value {
+    font-size: 56px;
+  }
+
+  .row-counter-btn {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+  }
+
+  .row-counter-controls {
+    gap: 16px;
+  }
+}
