@@ -16,9 +16,11 @@ export default function ProjectList({ projects, onSelect, onCreate }) {
     <div className="project-list">
       <div className="project-list-header">
         <h1>Your projects</h1>
-        <button type="button" className="btn btn-primary" onClick={() => setShowForm(true)}>
-          New project
-        </button>
+        {!showForm && (
+          <button type="button" className="btn btn-primary" onClick={() => setShowForm(true)}>
+            New project
+          </button>
+        )}
       </div>
 
       {showForm && (
@@ -28,7 +30,7 @@ export default function ProjectList({ projects, onSelect, onCreate }) {
         </div>
       )}
 
-      {projects.length === 0 ? (
+      {projects.length === 0 && !showForm ? (
         <div className="project-list-empty">
           <h2>No projects yet</h2>
           <p>Start tracking your first crochet project — add the pattern, yarn, and hook, then keep your row count as you go.</p>
